@@ -8,7 +8,7 @@
 
 
 int main() {
-    const std::vector<std::vector<double>> wp = {{1.1, 1.0, 0., 0.}, {0.1, 0.5, 2., 1.}}; //wp[i] {phi0, z0, omega0, vz0}
+    const std::vector<std::vector<double>> wp = {{1.1, 1.0, 0., 0.}, {M_PI/0.99, 10, 0, 0}}; //wp[i] {phi0, z0, omega0, vz0}
     constexpr size_t n = 4;
     std::vector<double> s(n), a(n);
     std::array<double, 3> xyz{};
