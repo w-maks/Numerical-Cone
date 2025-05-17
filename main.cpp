@@ -18,7 +18,7 @@ int main() {
     const std::vector<std::vector<std::string>> files = {{"cone1.csv","xyz1.csv"}, {"cone2.csv", "xyz2.csv"}};
 
     for(int i = 0; i < 2; i++) {
-        constexpr int N = 500;
+        constexpr int N = 5000;
         double t = 0.0;
         s[0] = wp[i][0];
         s[1] = wp[i][1];
@@ -34,7 +34,7 @@ int main() {
         fx << "t,x,y,z\n";
 
         for (int j = 0; j <= N; ++j) {
-            constexpr double dt = 0.1;
+            constexpr double dt = 0.01;
             fc << t << "," << s[0] << "," << s[1] << "," << s[2] << "," << s[3] << "," << E(T(s[1], s[2], s[3]), U(s[0], s[1])) << "," << E_anal(wp[i]) << "\n";
             xyz = transform_cone_to_lab(s[0], s[1]);
             fx << t << "," << xyz[0] << "," << xyz[1] << "," << xyz[2] << "\n";
